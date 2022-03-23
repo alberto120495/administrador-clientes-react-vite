@@ -1,11 +1,27 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
+import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import Alerta from "./Alerta";
 
 function Formulario() {
-  const handleSubmit = (values) => {
-    console.log(values);
+  const navigate = useNavigate();
+  const handleSubmit = async (values) => {
+    try {
+      const url = "http://localhost:4000/clientes";
+      const respuesta = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify(values),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const resultado = await respuesta.json();
+      navigate("/clientes");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const newClienteScheme = Yup.object().shape({
@@ -37,8 +53,9 @@ function Formulario() {
           telefono: "",
           notas: "",
         }}
-        onSubmit={(values) => {
-          handleSubmit(values);
+        onSubmit={async (values, { resetForm }) => {
+          await handleSubmit(values);
+          resetForm();
         }}
         validationSchema={newClienteScheme}
       >

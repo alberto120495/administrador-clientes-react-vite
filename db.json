@@ -1,3 +1,36 @@
 {
-    
+  "clientes": [
+    {
+      "nombre": "Alberto",
+      "empresa": "Personal",
+      "email": "albertopimentel04@gmail.com",
+      "telefono": "5532409802",
+      "notas": "Probado...",
+      "id": 1
+    },
+    {
+      "nombre": "Alberto",
+      "empresa": "Personal",
+      "email": "albertopimentel04@gmail.com",
+      "telefono": "5532409802",
+      "notas": "Probado...",
+      "id": 2
+    },
+    {
+      "nombre": "Karen",
+      "empresa": "Karen Diseño",
+      "email": "cl.info.fl@gmail.com",
+      "telefono": "+1553240980",
+      "notas": "Cotizando\n",
+      "id": 3
+    },
+    {
+      "nombre": "Diego",
+      "empresa": "Kao",
+      "email": "jpimenteln686@alumno.uaemex.mx",
+      "telefono": "+15532409802",
+      "notas": "Nuevo",
+      "id": 4
+    }
+  ]
 }
