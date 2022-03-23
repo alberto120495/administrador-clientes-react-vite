@@ -12,7 +12,7 @@ function Formulario({ cliente }) {
       let respuesta;
       let url;
       if (cliente.id) {
-        url = `http://localhost:4000/clientes/${cliente.id}`;
+        url = `${import.meta.env.VITE_API_URL}/${cliente.id}`;
         respuesta = await fetch(url, {
           method: "PUT",
           body: JSON.stringify(values),
@@ -21,7 +21,7 @@ function Formulario({ cliente }) {
           },
         });
       } else {
-        url = "http://localhost:4000/clientes";
+        url = import.meta.env.VITE_API_URL;
         respuesta = await fetch(url, {
           method: "POST",
           body: JSON.stringify(values),
